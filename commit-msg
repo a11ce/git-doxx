@@ -1,0 +1,7 @@
+#!/bin/bash
+
+get-location -f lisp | racket -e \
+'(let ([in (read)])
+    (displayln
+      (format "~n~nlocation: ~v, ~v"
+        (caar in) (cadar in))))' >> "$1"
